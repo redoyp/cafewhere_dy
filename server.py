@@ -19,7 +19,7 @@ def Message():
     content = content['userRequest']
     content = content['utterance']
 
-    if content == u"안녕":
+    if content == u"메뉴":
         dataSend = {
             "version": "2.0",
             "template": {
