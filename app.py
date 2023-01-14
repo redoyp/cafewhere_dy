@@ -45,68 +45,29 @@ def coffe(): # 함수 선언
 # 이 라인을 기준으로 위에는 제가 따로 연습할려고 사용한 부분입니다...
 
 
-
-@app.route('/')
-def hello():
-    return "안녕하세요! 카페웨어 챗봇입니다! 만나서 반가워요. 밑의 버튼을 눌러주시거나 원하시는 정보를 입력해주세요."
-  
-  
-  
-@app.route('/keyboard')
-def keyboard():
-    keyboard =  {
-    "type" : "buttons",
-    "buttons" : ["카페검색","카페추천","커피TI","이벤트쿠폰","도움말"]}
-    return jsonify(keyboard)
-
-
-
+answer = 0
 
 
 @app.route('/answer1',methods=['POST'])
-def coffeeTI_message():
-    dataReceive = request.get_json()
-    content = dataReceive['content']
-    
-    if content == "MBTI"|"mbti"|"테스트"|"커피 테스트"|"커피테스트"|"커피 mbti"|"커피mbti"|"커피 MBTI"|"커피MBTI"|"커피 TI"|"커피TI":
-      dataSend = {
-        "message" : {
-         "text" : "당신의 커피 취향을 알려드리는 커피TI 입니다!! 다음의 질문에 따라 답변해주세요!!\n\nQ1. 나에게 있어 커피 브레이크는?\n(1) 친구들과 수다 떨며 스트레스 푸는 시간\n(2) 조용히 혼자만의 시간을 가지며 생각을 정리하는 시간"
-       }
-     }
-    
-    return jsonify(datasend)
-
-
 def ans1():
+  prob1_buttons : ['친구들과 수다 떨며 스트레스 푸는 시간', '조용히 혼자만의 시간을 가지며 생각을 정리하는 시간']
   
-    req = request.get_json()
-    content = req['userRequest']
-    content = content['utterance']
-    param= req['action']['detailParams']
-    answer1 = param['answer1']['value'] 
-    answer2 = param['answer2']['value']
-    
-    user_id = req['userRequest']['user']['id']
-    answerlist[user_id] = []
-    
-    answerlist[user_id].append(answer1)
-    answerlist[user_id].append(answer2)
-    
+    dataReceive = request.get_json()
+    user_input = dataReceive["content"]
     response = {
-        "version": "2.0",
-        "template": {
-            "outputs": [
-                { 
-                    "simpleText": {
-                        "text": '{}'.format(answerlist[user_id]) 
-                    }
-                }
-            ]
-        }
+      "message" : {
+        "text" : '나에게 있어 커피 브레이크는?'
+      },
+      "keyboard" : {
+        "type" : "buttons",
+        "buttons" : prob1_buttons
+      }
     }
+    if user_input == prob1_buttons[0]: answer += 1
+      elif user_input == prob1_buttons[1]: answer += 2
+    
 
-    return response
+    return response, answer
 
 
 
