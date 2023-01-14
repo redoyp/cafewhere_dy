@@ -10,7 +10,7 @@ answerlist = {}
 # 서버가 정상적으로 작동하는지 확인
 # gttps : //url.com
 @app.route("/")
-def hello():
+def hello_prac():
   return "Hello, Flask!"
 
 
