@@ -62,10 +62,12 @@ def ans1():
       "buttons" : prob1_buttons
     }
   }
-  if user_input == prob1_buttons[0]: answer += 1
-    elif user_input == prob1_buttons[1]: answer += 2
+  if user_input == prob1_buttons[0]:
+    answer += 1
+  elif user_input == prob1_buttons[1]: 
+    answer += 2
     
-    return response, answer
+  return response, answer
 
 
 
