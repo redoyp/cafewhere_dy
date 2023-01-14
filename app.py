@@ -53,7 +53,7 @@ def coffeeTI_message():
     dataReceive = request.get_json()
     content = dataReceive['content']
     
-    if content == "MBTI"|"mbti"|"테스트"|"커피 테스트"|"커피테스트"|"커피 mbti"|"커피mbti"|"커피 MBTI"|"커피MBTI"|"커피 TI"|"커피TI" {
+    if content == "MBTI"|"mbti"|"테스트"|"커피 테스트"|"커피테스트"|"커피 mbti"|"커피mbti"|"커피 MBTI"|"커피MBTI"|"커피 TI"|"커피TI":
       dataSend = {
         "message" : {
          "text" : "당신의 커피 취향을 알려드리는 커피TI 입니다!! 다음의 질문에 따라 답변해주세요!!"
@@ -62,7 +62,6 @@ def coffeeTI_message():
           "text" : "(2) 조용히 혼자만의 시간을 가지며 생각을 정리하는 시간"
        }
      }
-    }
     
     return jsonify(datasend)
 
