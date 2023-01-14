@@ -49,6 +49,9 @@ def coffe(): # 함수 선언
 @app.route('/')
 def hello():
     return "안녕하세요! 카페웨어 챗봇입니다! 만나서 반가워요. 밑의 버튼을 눌러주시거나 원하시는 정보를 입력해주세요."
+  
+  
+  
 @app.route('/keyboard')
 def keyboard():
     keyboard =  {
