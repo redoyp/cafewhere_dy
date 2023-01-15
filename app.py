@@ -27,7 +27,7 @@ def ans1():
   elif user_input == prob1_buttons[1]: 
     answer += 2
     
-  return response, answer
+  return response
 
 
 
