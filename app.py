@@ -7,8 +7,10 @@ app = Flask(__name__)
 @app.route('/answer1',methods=['POST'])
 def ans1():
     
-    dataReceive = request.get_json()
-    content = dataReceive['content']
+    content = request.get_json()
+    content = content['userRequest']['utterance']
+    content=content.replace("\n","")
+    print(content)
     
     response = {
         "version": "2.0",
