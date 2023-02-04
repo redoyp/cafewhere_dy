@@ -4,23 +4,10 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 
-answerlist = {}
-
-
 @app.route('/answer1',methods=['POST'])
 def ans1():
     req = request.get_json()
-    content = req['userRequest']
-    content = content['utterance']
-    param= req['action']['detailParams']
-    answer1-1 = param['ans1-1']['value'] 
-    answer1-2 = param['ans1-2']['value']
-    
-    user_id = req['userRequest']['user']['id']
-    answerlist[user_id] = []
-    
-    answerlist[user_id].append(answer1-1)
-    answerlist[user_id].append(answer1-2)
+    answer1 = req['answer1'] 
     
     response = {
         "version": "2.0",
@@ -28,7 +15,7 @@ def ans1():
             "outputs": [
                 {	
                     "simpleText": {
-                        "text": '{}'.format(answerlist[user_id]) 
+                        "text": "test"
                     }
                 }
             ]
