@@ -7,10 +7,8 @@ app = Flask(__name__)
 @app.route('/answer1',methods=['POST'])
 def answer1():
     
-    content = request.get_json()
-    content = content['userRequest']['utterance']
-    content=content.replace("\n","")
-    print(content)
+    content = request.get_json()                       # 사용자가 입력한 정보를 json형태로 가져옴
+    content = content['userRequest']['utterance']      # 입력한 발화를 가져옴
     
     response = {
         "version": "2.0",
