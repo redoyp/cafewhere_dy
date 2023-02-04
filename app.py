@@ -25,7 +25,6 @@ def answer1():
                 ]
             }
         }
-        mbti_ans += 0
     elif content == u"조용히 혼자만의 시간을 가지며 생각을 정리하는 시간":
         dataSend = {
             "version" : "2.0",
@@ -39,7 +38,6 @@ def answer1():
                 ]
             }
         }
-        mbti_ans += 1
     else:
         dataSend = {
             "version" : "2.0",
