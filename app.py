@@ -13,16 +13,14 @@ def ans1():
     content = req['userRequest']
     content = content['utterance']
     param= req['action']['detailParams']
-    answer1 = param['answer1']['value'] 
-    answer2 = param['answer2']['value']
-    answer3 = param['answer3']['value']
+    answer1 = param['ans1-1']['value'] 
+    answer2 = param['ans1-2']['value']
     
     user_id = req['userRequest']['user']['id']
     answerlist[user_id] = []
     
     answerlist[user_id].append(answer1)
     answerlist[user_id].append(answer2)
-    answerlist[user_id].append(answer3)
     
     response = {
         "version": "2.0",
