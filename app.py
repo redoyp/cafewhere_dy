@@ -7,7 +7,7 @@ app = Flask(__name__)
 answerlist = {}
 
 
-@app.route('/prob1',methods=['POST'])
+@app.route('/answer1',methods=['POST'])
 def ans1():
     req = request.get_json()
     content = req['userRequest']
