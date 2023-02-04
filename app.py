@@ -10,6 +10,7 @@ def answer1():
     
     content = request.get_json()
     content = content['userRequest']['utterance']
+    content=content.replace("\n","")
     
     if content == u"친구들과 수다 떨며 스트레스 푸는 시간":
         dataSend = {
