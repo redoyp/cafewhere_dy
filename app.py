@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/answer1',methods=['POST'])
 def ans1():
     req = request.get_json()
-    answer1 = req['answer1'] 
+    answer1 = req['answer1']['value']
     
     response = {
         "version": "2.0",
