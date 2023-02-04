@@ -4,29 +4,40 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 
-answer = 0
+answerlist = {}
 
 
 @app.route('/answer1',methods=['POST'])
 def ans1():
-  body = request.get_json()
-    print(body)
-    print(body['userRequest']['utterance'])
-
-    responseBody = {
+    req = request.get_json()
+    content = req['userRequest']
+    content = content['utterance']
+    param= req['action']['detailParams']
+    answer1 = param['answer1']['value'] 
+    answer2 = param['answer2']['value']
+    answer3 = param['answer3']['value']
+    
+    user_id = req['userRequest']['user']['id']
+    answerlist[user_id] = []
+    
+    answerlist[user_id].append(answer1)
+    answerlist[user_id].append(answer2)
+    answerlist[user_id].append(answer3)
+    
+    response = {
         "version": "2.0",
         "template": {
             "outputs": [
-                {
+                {	
                     "simpleText": {
-                        "text": "당신의 커피 취향을 알려드리는 커피TI입니다."
+                        "text": '{}'.format(answerlist[user_id]) 
                     }
                 }
             ]
         }
     }
 
-    return responseBody
+    return response
 
 
 
