@@ -24,7 +24,7 @@ def answer1():
             }
         }
 
-    return response
+    return jsonify(response)
 
 
 
