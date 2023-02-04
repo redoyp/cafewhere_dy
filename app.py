@@ -23,6 +23,19 @@ def answer1():
                 ]
             }
         }
+     else:
+        dataSend = {
+            "version" : "2.0",
+            "template" : {
+                "outputs" : [
+                    {
+                        "simpleText" : {
+                            "text" : "error입니다."
+                        }
+                    }
+                ]
+            }
+        }
     return jsonify(dataSend)
 
 
