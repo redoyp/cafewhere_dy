@@ -6,7 +6,6 @@ app = Flask(__name__)
 
 @app.route('/answer1',methods=['POST'])
 def answer1():
-def Message():
     
     content = request.get_json()
     content = content['userRequest']['utterance']
