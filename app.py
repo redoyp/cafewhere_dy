@@ -3,8 +3,6 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-mbti_ans = 0
-
 @app.route('/answer1',methods=['POST'])
 def answer1():
     
