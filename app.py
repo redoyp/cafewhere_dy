@@ -342,7 +342,7 @@ def answer12():
             "outputs": [
                 {	
                     "simpleText": {
-                        "text": "..."
+                        "text": "테스트가 끝났습니다!! 당신의 결과는?"
                     }
                 }
             ]
