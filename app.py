@@ -5,6 +5,50 @@ app = Flask(__name__)
 
 answerlist = {}
 
+
+
+@app.route('/mbti_home',methods=['POST'])
+def answer1():
+    
+    req = request.get_json()
+    content = req['userRequest']['utterance']
+    
+    datasend = {
+        "version": "2.0",
+        "template": {
+            "outputs": [
+                {	
+                    "simpleText": {
+                        "text": "당신의 커피 취향을 알려드리는 커피TI 입니다!\n아래의 질문에 따라 답변을 정확히 해주세요"
+                    }
+                }
+            ],
+            "outputs": [
+                {	
+                    "simpleText": {
+                        "text": "Q1.나에게 있어 커피 브레이크는 \n\n(1) 친구들과 수다 떨며 스트레스 푸는 시간\n(2) 조용히 혼자만의 시간을 가지며 생각을 정리하는 시간"
+                    }
+                }
+            ],
+            "quickReplies": [
+                {
+                    "messageText": "친구들과 수다 떨며 스트레스 푸는 시간",
+                    "action": "message",
+                    "label": "친구들과 수다 떨며 스트레스 푸는 시간"
+                },
+                {
+                    "messageText": "조용히 혼자만의 시간을 가지며 생각을 정리하는 시간",
+                    "action": "message",
+                    "label": "조용히 혼자만의 시간을 가지며 생각을 정리하는 시간"
+                },
+            ]
+        }
+    }
+    
+    return jsonify(datasend)
+
+
+
 @app.route('/answer1',methods=['POST'])
 def answer1():
     
