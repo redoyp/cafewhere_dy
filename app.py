@@ -18,32 +18,18 @@ def answer1():
     
     print(answerlist)
     
-    if content == u"친구들과 수다 떨며 스트레스 푸는 시간":
-        datasend = {
-            "version": "2.0",
-            "template": {
-                "outputs": [
-                    {	
-                        "simpleText": {
-                            "text": "수다"
-                        }
+    datasend = {
+        "version": "2.0",
+        "template": {
+            "outputs": [
+                {	
+                    "simpleText": {
+                        "text": "ok"
                     }
-                ]
-            }
+                }
+            ]
         }
-    else:
-        datasend = {
-            "version": "2.0",
-            "template": {
-                "outputs": [
-                    {	
-                        "simpleText": {
-                            "text": "혼자"
-                        }
-                    }
-                ]
-            }
-        }
+    }
     
     return jsonify(datasend)
 
