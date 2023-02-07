@@ -8,10 +8,10 @@ answerlist = {}
 @app.route('/answer1',methods=['POST'])
 def answer1():
     
-    content = request.get_json()
-    content = content['userRequest']['utterance']
-    
-    param= content['action']['detailParams']
+    req = request.get_json()
+    content = req['userRequest']
+    content = content['utterance']
+    param= req['action']['detailParams']
     answer1_1 = param['answer1_1']['value'] 
     answer1_2 = param['answer1_2']['value']
     
