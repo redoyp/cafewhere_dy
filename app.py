@@ -3,11 +3,16 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
+answerlist = {}
+
 @app.route('/answer1',methods=['POST'])
 def answer1():
     
     content = request.get_json()
     content = content['userRequest']['utterance']
+    
+    answer1_1 = param['answer1_1']['value'] 
+    answer1_2 = param['answer1_2']['value']
     
     if content == u"친구들과 수다 떨며 스트레스 푸는 시간":
         dataSend = {
