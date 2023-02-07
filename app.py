@@ -11,18 +11,32 @@ def answer1():
     req = request.get_json()
     content = req['userRequest']['utterance']
     
-    datasend = {
-        "version": "2.0",
-        "template": {
-            "outputs": [
-                {	
-                    "simpleText": {
-                        "text": "ok"
+    if content == u"친구들과 수다 떨며 스트레스 푸는 시간":
+        datasend = {
+            "version": "2.0",
+            "template": {
+                "outputs": [
+                    {	
+                        "simpleText": {
+                            "text": "수다"
+                        }
                     }
-                }
-            ]
+                ]
+            }
         }
-    }
+    else:
+        datasend = {
+            "version": "2.0",
+            "template": {
+                "outputs": [
+                    {	
+                        "simpleText": {
+                            "text": "혼자"
+                        }
+                    }
+                ]
+            }
+        }
     
     return jsonify(datasend)
 
