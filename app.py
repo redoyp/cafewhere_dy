@@ -11,8 +11,8 @@ def answer1():
     content = request.get_json()
     content = content['userRequest']['utterance']
     
-    answer1_1 = param['answer1_1']['value'] 
-    answer1_2 = param['answer1_2']['value']
+    answer1_1 = content['answer1_1']['value'] 
+    answer1_2 = content['answer1_2']['value']
     
     if content == u"친구들과 수다 떨며 스트레스 푸는 시간":
         dataSend = {
