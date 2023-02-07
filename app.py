@@ -9,7 +9,7 @@ answerlist = {}
 def answer1():
     
     content = request.get_json()
-    cotent = content['userRequest']['uterrance']
+    cotent = content['userRequest']['utterance']
     
     if content == u"친구들과 수다 떨며 스트레스 푸는 시간":
         dataSend = {
