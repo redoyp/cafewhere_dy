@@ -11,19 +11,18 @@ def answer1():
     req = request.get_json()
     content = req['userRequest']['utterance']
     
-    if content == u"시작하기":
-        dataSend ={
-            "message" : {
-                "text" : "시작하기 테스트입니다."
-            }
+    datasend = {
+        "version": "2.0",
+        "template": {
+            "outputs": [
+                {	
+                    "simpleText": {
+                        "text": "ok"
+                    }
+                }
+            ]
         }
-
-    elif content == u"안녕하세요":
-        dataSend ={
-            "message" : {
-                "text" : "반갑습니다 어서오세요."
-            }
-        }
+    }
     
     return jsonify(dataSend)
 
