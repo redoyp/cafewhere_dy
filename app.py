@@ -11,45 +11,19 @@ def answer1():
     content = request.get_json()
     cotent = content['userRequest']['utterance']
     
-    if content == u"친구들과 수다 떨며 스트레스 푸는 시간":
-        dataSend = {
-            "version" : "2.0",
-            "template" : {
-                "outputs" : [
-                    {
-                        "simpleText" : {
-                            "text" : "수다"
-                        }
+    dataSend = {
+        "version" : "2.0",
+        "template" : {
+            "outputs" : [
+                {
+                    "simpleText" : {
+                        "text" : "ok"
                     }
-                ]
-            }
+                }
+            ]
         }
-    elif content == u"조용히 혼자만의 시간을 가지며 생각을 정리하는 시간":
-        dataSend = {
-            "version" : "2.0",
-            "template" : {
-                "outputs" : [
-                    {
-                        "simpleText" : {
-                            "text" : "혼자"
-                        }
-                    }
-                ]
-            }
-        }
-    else:
-        dataSend = {
-            "version" : "2.0",
-            "template" : {
-                "outputs" : [
-                    {
-                        "simpleText" : {
-                            "text" : "error"
-                        }
-                    }
-                ]
-            }
-        }
+    }
+    
     return jsonify(dataSend)
 
 
