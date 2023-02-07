@@ -35,6 +35,35 @@ def answer1():
 
 
 
+@app.route('/answer2',methods=['POST'])
+def answer2():
+    
+    req = request.get_json()
+    content = req['userRequest']['utterance']
+    
+    user_id = req['userRequest']['user']['id']
+    answerlist[user_id] = []
+    
+    answerlist[user_id].append(content)
+    
+    print(answerlist)
+    
+    datasend = {
+        "version": "2.0",
+        "template": {
+            "outputs": [
+                {	
+                    "simpleText": {
+                        "text": "ok"
+                    }
+                }
+            ]
+        }
+    }
+    
+    return jsonify(datasend)
+
+
 # 메인 함수
 if __name__ == '__main__':
   app.run(host='0.0.0.0', port=5000, threaded=True)
