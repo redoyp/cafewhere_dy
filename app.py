@@ -8,8 +8,8 @@ answerlist = {}
 @app.route('/answer1',methods=['POST'])
 def answer1():
     
-    dataReceive = request.get_json()
-    content = dataReceive['content']
+    req = request.get_json()
+    content = req['userRequest']['utterance']
     
     if content == u"시작하기":
         dataSend ={
