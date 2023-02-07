@@ -3,7 +3,12 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-answerlist = {}
+# E:1     , I:2
+# S:10    , N:20
+# T:100   , F:200
+# J:1000  , P:2000
+
+mbti_point = 0
 
 @app.route('/answer1',methods=['POST'])
 def answer1():
@@ -12,6 +17,7 @@ def answer1():
     content = req['userRequest']['utterance']
     
     if content == u"친구들과 수다 떨며 스트레스 푸는 시간":
+        mbti_point += 1
         datasend = {
             "version": "2.0",
             "template": {
@@ -25,6 +31,7 @@ def answer1():
             }
         }
     else:
+        mbti_point += 2
         datasend = {
             "version": "2.0",
             "template": {
