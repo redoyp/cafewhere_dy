@@ -11,7 +11,7 @@ def answer1():
     content = request.get_json()
     content = content['userRequest']['utterance']
     
-    param= req['action']['detailParams']
+    param= content['action']['detailParams']
     answer1_1 = param['answer1_1']['value'] 
     answer1_2 = param['answer1_2']['value']
     
