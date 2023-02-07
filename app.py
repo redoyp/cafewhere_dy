@@ -24,7 +24,7 @@ def answer1():
             "outputs": [
                 {	
                     "simpleText": {
-                        "text": "ok"
+                        "text": "Q2.나는 달고나 커피를 \n\n(1) 누구보다 열심히 휘저어 성공적으로 완성\n(2) 시도조차 하지 않는다"
                     }
                 }
             ]
