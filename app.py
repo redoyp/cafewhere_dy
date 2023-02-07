@@ -8,7 +8,7 @@ answerlist = {}
 
 
 @app.route('/mbti_home',methods=['POST'])
-def answer1():
+def mbti_home():
     
     req = request.get_json()
     content = req['userRequest']['utterance']
