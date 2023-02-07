@@ -11,10 +11,7 @@ def answer1():
     req = request.get_json()
     content = req['userRequest']['utterance']
     
-    user_id = req['userRequest']['user']['id']
-    answerlist[user_id] = []
-    
-    answerlist[user_id].append(content)
+    answerlist[0].append(content)
     
     print(answerlist)
     
@@ -41,10 +38,7 @@ def answer2():
     req = request.get_json()
     content = req['userRequest']['utterance']
     
-    user_id = req['userRequest']['user']['id']
-    answerlist[user_id] = []
-    
-    answerlist[user_id].append(content)
+    answerlist[1].append(content)
     
     print(answerlist)
     
