@@ -26,6 +26,18 @@ def answer1():
                         "text": "Q2.나는 달고나 커피를 \n\n(1) 누구보다 열심히 휘저어 성공적으로 완성!!\n(2) 시도조차 하지 않는다"
                     }
                 }
+            ],
+            "quickReplies": [
+                {
+                    "messageText": "누구보다 열심히 휘저어 성공적으로 완성!!",
+                    "action": "message",
+                    "label": "누구보다 열심히 휘저어 성공적으로 완성!!"
+                },
+                {
+                    "messageText": "시도조차 하지 않는다",
+                    "action": "message",
+                    "label": "시도조차 하지 않는다"
+                },
             ]
         }
     }
