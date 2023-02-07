@@ -16,6 +16,8 @@ def answer1():
     
     answerlist[user_id].append(content)
     
+    print(answerlist)
+    
     if content == u"친구들과 수다 떨며 스트레스 푸는 시간":
         datasend = {
             "version": "2.0",
