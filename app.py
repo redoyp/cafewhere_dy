@@ -11,18 +11,19 @@ def answer1():
     content = request.get_json()
     cotent = content['userRequest']['utterance']
     
-    dataSend = {
-        "version" : "2.0",
-        "template" : {
-            "outputs" : [
-                {
-                    "simpleText" : {
-                        "text" : "ok"
+    if method == "POST":
+        dataSend = {
+            "version" : "2.0",
+            "template" : {
+                "outputs" : [
+                    {
+                        "simpleText" : {
+                            "text" : "ok"
+                        }
                     }
-                }
-            ]
+                ]
+            }
         }
-    }
     
     return jsonify(dataSend)
 
