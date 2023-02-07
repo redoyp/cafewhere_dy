@@ -64,7 +64,7 @@ def answer2():
 
 
 @app.route('/answer3',methods=['POST'])
-def answer2():
+def answer3():
     
     req = request.get_json()
     content = req['userRequest']['utterance']
@@ -93,7 +93,7 @@ def answer2():
 
 
 @app.route('/answer4',methods=['POST'])
-def answer2():
+def answer4():
     
     req = request.get_json()
     content = req['userRequest']['utterance']
@@ -122,7 +122,7 @@ def answer2():
 
 
 @app.route('/answer5',methods=['POST'])
-def answer2():
+def answer5():
     
     req = request.get_json()
     content = req['userRequest']['utterance']
@@ -139,7 +139,7 @@ def answer2():
             "outputs": [
                 {	
                     "simpleText": {
-                        "text": "Q6.속상한 일이 있어 친구에게 털어놓을 때 나는 \n\n(1) 아이스 커피의 얼음까지 아작아작 씹으면서 시원하게 속마음을 쏟아낸다\n(2) 따뜻한 커피 한잔과 함께 그 날 있었던 일등을 조목조목 이야기한다"
+                        "text": "Q6.속상한 일이 있어 친구에게 털어놓을 때 나는 \n\n(1) 아이스 커피의 얼음까지 아작아작 씹으면서 시원하게 속마음을 쏟아낸다\n(2) 따뜻한 커피 한잔과 함께 그 날 있었던 일들을 조목조목 이야기한다"
                     }
                 }
             ]
@@ -151,7 +151,7 @@ def answer2():
 
 
 @app.route('/answer6',methods=['POST'])
-def answer2():
+def answer6():
     
     req = request.get_json()
     content = req['userRequest']['utterance']
@@ -168,7 +168,181 @@ def answer2():
             "outputs": [
                 {	
                     "simpleText": {
-                        "text": "Q7.부장님이 커피를 쏜다며 커피 주문을 받을 때 나는 \n\n(1) 수고한 나를 위해 고급 스페셜티 커피를 주문한다.\n(2) 부장님 따라 아메리카노를 주문한다."
+                        "text": "Q7.부장님이 커피를 쏜다며 커피 주문을 받을 때 나는 \n\n(1) 수고한 나를 위해 고급 스페셜티 커피를 주문한다\n(2) 부장님 따라 아메리카노를 주문한다"
+                    }
+                }
+            ]
+        }
+    }
+    
+    return jsonify(datasend)
+
+
+
+@app.route('/answer7',methods=['POST'])
+def answer7():
+    
+    req = request.get_json()
+    content = req['userRequest']['utterance']
+    
+    user_id = req['userRequest']['user']['id']
+    
+    answerlist[user_id].append(content)
+    
+    print(answerlist)
+    
+    datasend = {
+        "version": "2.0",
+        "template": {
+            "outputs": [
+                {	
+                    "simpleText": {
+                        "text": "Q8.친구가 우울한 목소리로 만나자고 연락이 올 때 나는 \n\n(1) 전화로 무슨 일인지 차근차근 물어본다 \n(2) 커피 한 잔 하자며 친구를 불러 이야기를 들어준다"
+                    }
+                }
+            ]
+        }
+    }
+    
+    return jsonify(datasend)
+
+
+
+@app.route('/answer8',methods=['POST'])
+def answer8():
+    
+    req = request.get_json()
+    content = req['userRequest']['utterance']
+    
+    user_id = req['userRequest']['user']['id']
+    
+    answerlist[user_id].append(content)
+    
+    print(answerlist)
+    
+    datasend = {
+        "version": "2.0",
+        "template": {
+            "outputs": [
+                {	
+                    "simpleText": {
+                        "text": "Q9.점심시간에 업무에 차질이 생겼다는 연락을 받았을 때 나는 \n\n(1) 차가운 커피 한잔과 함께 어떻게 해결해야 할지 차분히 생각 정리부터 한다 \n(2) 으아아아아아악! 커피 마실 새도 없이 뛰어간다"
+                    }
+                }
+            ]
+        }
+    }
+    
+    return jsonify(datasend)
+
+
+
+@app.route('/answer9',methods=['POST'])
+def answer9():
+    
+    req = request.get_json()
+    content = req['userRequest']['utterance']
+    
+    user_id = req['userRequest']['user']['id']
+    
+    answerlist[user_id].append(content)
+    
+    print(answerlist)
+    
+    datasend = {
+        "version": "2.0",
+        "template": {
+            "outputs": [
+                {	
+                    "simpleText": {
+                        "text": "Q10.가족과 찾은 여행지 유명 맛집에 웨이팅이 매우 긴 걸 알았을 때 나는 \n\n(1) 이곳은 맛집이니 몇 시간도 기다릴 수 있다 \n(2) 사람이 너무 많으니 근처 다른 곳으로 이동한다"
+                    }
+                }
+            ]
+        }
+    }
+    
+    return jsonify(datasend)
+
+
+
+@app.route('/answer10',methods=['POST'])
+def answer10():
+    
+    req = request.get_json()
+    content = req['userRequest']['utterance']
+    
+    user_id = req['userRequest']['user']['id']
+    
+    answerlist[user_id].append(content)
+    
+    print(answerlist)
+    
+    datasend = {
+        "version": "2.0",
+        "template": {
+            "outputs": [
+                {	
+                    "simpleText": {
+                        "text": "Q11.매일 아침 모닝 커피로 시작하는 내가 늦잠을 잤다면 \n\n(1) 늦더라도 커피는 못 잃어(지각...ㅜㅜ) \n(2) 사무실에 있는 믹스 커피로 대체한다"
+                    }
+                }
+            ]
+        }
+    }
+    
+    return jsonify(datasend)
+
+
+
+@app.route('/answer11',methods=['POST'])
+def answer11():
+    
+    req = request.get_json()
+    content = req['userRequest']['utterance']
+    
+    user_id = req['userRequest']['user']['id']
+    
+    answerlist[user_id].append(content)
+    
+    print(answerlist)
+    
+    datasend = {
+        "version": "2.0",
+        "template": {
+            "outputs": [
+                {	
+                    "simpleText": {
+                        "text": "Q12.주말 아침 나는 \n\n(1) 부지런히 평일에 계획한 일들을 처리한다 \n(2) 느긋하게 늦잠 자고 일어나 브런치부터 즐겨본다"
+                    }
+                }
+            ]
+        }
+    }
+    
+    return jsonify(datasend)
+
+
+
+@app.route('/answer12',methods=['POST'])
+def answer12():
+    
+    req = request.get_json()
+    content = req['userRequest']['utterance']
+    
+    user_id = req['userRequest']['user']['id']
+    
+    answerlist[user_id].append(content)
+    
+    print(answerlist)
+    
+    datasend = {
+        "version": "2.0",
+        "template": {
+            "outputs": [
+                {	
+                    "simpleText": {
+                        "text": "..."
                     }
                 }
             ]
