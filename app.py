@@ -5,6 +5,7 @@ app = Flask(__name__)
 
 answerlist = {}
 
+from model import result
 
 
 @app.route('/mbti_home',methods=['POST'])
