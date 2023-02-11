@@ -1,11 +1,13 @@
 # flask import
 from flask import Flask, request, jsonify
 
+from model import result
+
 app = Flask(__name__)
 
 answerlist = {}
 
-from model import result
+user_mbti = {}
 
 
 @app.route('/mbti_home',methods=['POST'])
@@ -517,14 +519,248 @@ def answer12():
             "outputs": [
                 {	
                     "simpleText": {
-                        "text": "테스트가 끝났습니다!! 당신의 결과는?"
+                        "text": "테스트가 끝났습니다!! 결과를 열어볼까요?"
                     }
                 }
-            ]
+            ],
+            "quickReplies": [
+                {
+                    "messageText": "네!!",
+                    "action": "message",
+                    "label": "네!!"
+                }
         }
     }
     
     return jsonify(datasend)
+    
+    
+    
+@app.route('/mbti',methods=['POST'])
+def mbti():
+    
+    req = request.get_json()
+    
+    user_id = req['userRequest']['user']['id']
+    
+    mbti_result = result(answerlist[user_id])
+    user_mbti[user_id] = mbti_result
+    
+    print(user_mbti)
+    
+    if mbti_result == 'estj':
+        datasend = {
+            "version": "2.0",
+            "template": {
+            "outputs": [
+                  {
+                    "simpleText": {
+                        "text": "estj"
+                        }
+                    }
+                ]
+            }
+        }
+    elif mbti_result == 'estp':
+        datasend = {
+            "version": "2.0",
+            "template": {
+            "outputs": [
+                  {
+                    "simpleText": {
+                        "text": "estp"
+                        }
+                    }
+                ]
+            }
+        }
+    elif mbti_result == 'esfj':
+        datasend = {
+            "version": "2.0",
+            "template": {
+            "outputs": [
+                  {
+                    "simpleText": {
+                        "text": "esfj"
+                        }
+                    }
+                ]
+            }
+        }
+    elif mbti_result == 'esfp':
+        datasend = {
+            "version": "2.0",
+            "template": {
+            "outputs": [
+                  {
+                    "simpleText": {
+                        "text": "esfp"
+                        }
+                    }
+                ]
+            }
+        }
+    elif mbti_result == 'entj':
+        datasend = {
+            "version": "2.0",
+            "template": {
+            "outputs": [
+                  {
+                    "simpleText": {
+                        "text": "entj"
+                        }
+                    }
+                ]
+            }
+        }
+    elif mbti_result == 'entp':
+        datasend = {
+            "version": "2.0",
+            "template": {
+            "outputs": [
+                  {
+                    "simpleText": {
+                        "text": "entp"
+                        }
+                    }
+                ]
+            }
+        }
+    elif mbti_result == 'enfj':
+        datasend = {
+            "version": "2.0",
+            "template": {
+            "outputs": [
+                  {
+                    "simpleText": {
+                        "text": "enfj"
+                        }
+                    }
+                ]
+            }
+        }
+    elif mbti_result == 'enfp':
+        datasend = {
+            "version": "2.0",
+            "template": {
+            "outputs": [
+                  {
+                    "simpleText": {
+                        "text": "enfp"
+                        }
+                    }
+                ]
+            }
+        }
+        
+        
+    elif mbti_result == 'istj':
+        datasend = {
+            "version": "2.0",
+            "template": {
+            "outputs": [
+                  {
+                    "simpleText": {
+                        "text": "istj"
+                        }
+                    }
+                ]
+            }
+        }
+    elif mbti_result == 'istp':
+        datasend = {
+            "version": "2.0",
+            "template": {
+            "outputs": [
+                  {
+                    "simpleText": {
+                        "text": "istp"
+                        }
+                    }
+                ]
+            }
+        }
+    elif mbti_result == 'isfj':
+        datasend = {
+            "version": "2.0",
+            "template": {
+            "outputs": [
+                  {
+                    "simpleText": {
+                        "text": "isfj"
+                        }
+                    }
+                ]
+            }
+        }
+    elif mbti_result == 'isfp':
+        datasend = {
+            "version": "2.0",
+            "template": {
+            "outputs": [
+                  {
+                    "simpleText": {
+                        "text": "isfp"
+                        }
+                    }
+                ]
+            }
+        }
+    elif mbti_result == 'intj':
+        datasend = {
+            "version": "2.0",
+            "template": {
+            "outputs": [
+                  {
+                    "simpleText": {
+                        "text": "intj"
+                        }
+                    }
+                ]
+            }
+        }
+    elif mbti_result == 'intp':
+        datasend = {
+            "version": "2.0",
+            "template": {
+            "outputs": [
+                  {
+                    "simpleText": {
+                        "text": "intp"
+                        }
+                    }
+                ]
+            }
+        }
+    elif mbti_result == 'infj':
+        datasend = {
+            "version": "2.0",
+            "template": {
+            "outputs": [
+                  {
+                    "simpleText": {
+                        "text": "infj"
+                        }
+                    }
+                ]
+            }
+        }
+    elif mbti_result == 'infp':
+        datasend = {
+            "version": "2.0",
+            "template": {
+            "outputs": [
+                  {
+                    "simpleText": {
+                        "text": "infp"
+                        }
+                    }
+                ]
+            }
+        }
+    
+    return jsonify(datasend)
+    
 
 
 # 메인 함수
