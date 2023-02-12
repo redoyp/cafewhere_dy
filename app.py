@@ -759,6 +759,9 @@ def mbti():
                 ]
             }
         }
+        
+    answerlist.pop(user_id)
+    user_mbti.pop(user_id)
     
     return jsonify(datasend)
     
