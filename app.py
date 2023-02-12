@@ -762,7 +762,6 @@ def mbti():
         
     answerlist.pop(user_id)
     user_mbti.pop(user_id)
-    mbti_result.pop
     
     return jsonify(datasend)
     
