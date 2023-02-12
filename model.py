@@ -6,6 +6,7 @@ def result(answerlist) :
   # j : 0000     p : 1000
   
   point = 0
+  mbti_result = {}
   
   #1
   if [s for s in answerlist if "친구들과 수다 떨며 스트레스 푸는 시간" in s] != "" : point += 0
