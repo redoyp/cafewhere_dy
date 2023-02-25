@@ -1,7 +1,7 @@
 # flask import
 from flask import Flask, request, jsonify
 
-from model import result
+from mbti_model import result
 
 app = Flask(__name__)
 
