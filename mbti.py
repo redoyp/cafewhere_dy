@@ -556,7 +556,7 @@ def mbti():
             "outputs": [
                   {
                     "simpleText": {
-                        "text": "estj"
+                        "text": "당신의 커피TI는 ESTJ!!\n\n뜨겁게 내린 에스프레소가 어울리는 겉은 평온 속은 불타는 휴화산 CEO"
                         }
                     }
                 ]
@@ -595,7 +595,7 @@ def mbti():
             "outputs": [
                   {
                     "simpleText": {
-                        "text": "esfp"
+                        "text": "당신의 커피TI는 ESFP!!\n\n따뜻하게 내린 카라멜 마키아토가 가장 어울리는 파티피플"
                         }
                     }
                 ]
@@ -621,7 +621,7 @@ def mbti():
             "outputs": [
                   {
                     "simpleText": {
-                        "text": "entp"
+                        "text": "당신의 커피TI는 ENTP!!\n\n뜨겁게 내린 에스프레소가 가장 어울리는 프로 직진러"
                         }
                     }
                 ]
@@ -753,7 +753,7 @@ def mbti():
             "outputs": [
                   {
                     "simpleText": {
-                        "text": "infp"
+                        "text": "당신의 커피TI는 INFP!!\n\n적당한 온도로 내린 부드러운 라떼 마키아토가 어울리는 섬세한 예술가"
                         }
                     }
                 ]
