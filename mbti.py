@@ -76,12 +76,12 @@ def answer1():
                 {
                     "messageText": "누구보다 열심히 휘저어 성공적으로 완성!!",
                     "action": "message",
-                    "label": "누구보다 열심히 휘저어 성공적으로 완성!!"
+                    "label": "1"
                 },
                 {
                     "messageText": "시도조차 하지 않는다",
                     "action": "message",
-                    "label": "시도조차 하지 않는다"
+                    "label": "2"
                 },
             ]
         }
@@ -117,12 +117,12 @@ def answer2():
                 {
                     "messageText": "중앙의 푹신한 소파석",
                     "action": "message",
-                    "label": "중앙의 푹신한 소파석"
+                    "label": "1"
                 },
                 {
                     "messageText": "조용한 창가의 바 테이블",
                     "action": "message",
-                    "label": "조용한 창가의 바 테이블"
+                    "label": "2"
                 },
             ]
         }
@@ -158,12 +158,12 @@ def answer3():
                 {
                     "messageText": "묻고 따지지말고 당연히 아이스 아메리카노",
                     "action": "message",
-                    "label": "묻고 따지지말고 당연히 아이스 아메리카노"
+                    "label": "1"
                 },
                 {
                     "messageText": "시그니쳐 메뉴가 무엇인지 우선 살핀다",
                     "action": "message",
-                    "label": "시그니쳐 메뉴가 무엇인지 우선 살핀다"
+                    "label": "2"
                 },
             ]
         }
@@ -199,12 +199,12 @@ def answer4():
                 {
                     "messageText": "친구의 성향보다는 요즘 잘나가는게 최고",
                     "action": "message",
-                    "label": "친구의 성향보다는 요즘 잘나가는게 최고"
+                    "label": "1"
                 },
                 {
                     "messageText": "평소 친구의 취향을 기억했다가 선물한다",
                     "action": "message",
-                    "label": "평소 친구의 취향을 기억했다가 선물한다"
+                    "label": "2"
                 },
             ]
         }
@@ -240,12 +240,12 @@ def answer5():
                 {
                     "messageText": "아이스 커피의 얼음까지 아작아작 씹으면서 시원하게 속마음을 쏟아낸다",
                     "action": "message",
-                    "label": "아이스 커피의 얼음까지 아작아작 씹으면서 시원하게 속마음을 쏟아낸다"
+                    "label": "1"
                 },
                 {
                     "messageText": "따뜻한 커피 한잔과 함께 그 날 있었던 일들을 조목조목 이야기한다",
                     "action": "message",
-                    "label": "따뜻한 커피 한잔과 함께 그 날 있었던 일들을 조목조목 이야기한다"
+                    "label": "2"
                 },
             ]
         }
@@ -281,12 +281,12 @@ def answer6():
                 {
                     "messageText": "수고한 나를 위해 고급 스페셜티 커피를 주문한다",
                     "action": "message",
-                    "label": "수고한 나를 위해 고급 스페셜티 커피를 주문한다"
+                    "label": "1"
                 },
                 {
                     "messageText": "부장님 따라 아메리카노를 주문한다",
                     "action": "message",
-                    "label": "부장님 따라 아메리카노를 주문한다"
+                    "label": "2"
                 },
             ]
         }
@@ -322,12 +322,12 @@ def answer7():
                 {
                     "messageText": "전화로 무슨 일인지 차근차근 물어본다",
                     "action": "message",
-                    "label": "전화로 무슨 일인지 차근차근 물어본다"
+                    "label": "1"
                 },
                 {
                     "messageText": "커피 한 잔 하자며 친구를 불러 이야기를 들어준다",
                     "action": "message",
-                    "label": "커피 한 잔 하자며 친구를 불러 이야기를 들어준다"
+                    "label": "2"
                 },
             ]
         }
@@ -363,12 +363,12 @@ def answer8():
                 {
                     "messageText": "차가운 커피 한잔과 함께 어떻게 해결해야 할지 차분히 생각 정리부터 한다",
                     "action": "message",
-                    "label": "차가운 커피 한잔과 함께 어떻게 해결해야 할지 차분히 생각 정리부터 한다"
+                    "label": "1"
                 },
                 {
                     "messageText": "으아아아아아악! 커피 마실 새도 없이 뛰어간다",
                     "action": "message",
-                    "label": "으아아아아아악! 커피 마실 새도 없이 뛰어간다"
+                    "label": "2"
                 },
             ]
         }
@@ -404,12 +404,12 @@ def answer9():
                 {
                     "messageText": "이곳은 맛집이니 몇 시간도 기다릴 수 있다",
                     "action": "message",
-                    "label": "이곳은 맛집이니 몇 시간도 기다릴 수 있다"
+                    "label": "1"
                 },
                 {
                     "messageText": "사람이 너무 많으니 근처 다른 곳으로 이동한다",
                     "action": "message",
-                    "label": "사람이 너무 많으니 근처 다른 곳으로 이동한다"
+                    "label": "2"
                 },
             ]
         }
@@ -445,12 +445,12 @@ def answer10():
                 {
                     "messageText": "늦더라도 커피는 못 잃어(지각...ㅜㅜ)",
                     "action": "message",
-                    "label": "늦더라도 커피는 못 잃어(지각...ㅜㅜ)"
+                    "label": "1"
                 },
                 {
                     "messageText": "사무실에 있는 믹스 커피로 대체한다",
                     "action": "message",
-                    "label": "사무실에 있는 믹스 커피로 대체한다"
+                    "label": "2"
                 },
             ]
         }
@@ -486,12 +486,12 @@ def answer11():
                 {
                     "messageText": "부지런히 평일에 계획한 일들을 처리한다",
                     "action": "message",
-                    "label": "부지런히 평일에 계획한 일들을 처리한다"
+                    "label": "1"
                 },
                 {
                     "messageText": "느긋하게 늦잠 자고 일어나 브런치부터 즐긴다",
                     "action": "message",
-                    "label": "느긋하게 늦잠 자고 일어나 브런치부터 즐긴다"
+                    "label": "2"
                 },
             ]
         }
