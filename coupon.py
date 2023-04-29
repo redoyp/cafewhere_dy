@@ -17,8 +17,8 @@ def coupon():
     user_id = req['userRequest']['user']['id']
     user_coupon[user_id] = []
     
-    answerlist[user_id].append(content)
-    print(answerlist)
+    user_coupon[user_id].append(content)
+    print(user_coupon)
     
     datasend = {
         "version": "2.0",
