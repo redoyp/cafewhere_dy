@@ -1,0 +1,36 @@
+# flask import
+from flask import Flask, request, jsonify
+
+from mbti_model import result
+
+app = Flask(__name__)
+
+user_coupon = {}
+
+
+@app.route('/coupon',methods=['POST'])
+def coupon():
+    
+    req = request.get_json()
+    content = req['userRequest']['utterance']
+    
+    user_id = req['userRequest']['user']['id']
+    user_coupon[user_id] = []
+    
+    answerlist[user_id].append(content)
+    print(answerlist)
+    
+    datasend = {
+        "version": "2.0",
+        "template": {
+            "outputs": [
+                {	
+                    "simpleText": {
+                        "text": "user_id 확인"
+                    }
+                }
+            ]
+        }
+    }
+    
+    return jsonify(datasend)
