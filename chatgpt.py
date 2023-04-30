@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 import openai
 
 app = Flask(__name__)
-openai.api_key = ""
+openai.api_key = "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"
 
 @app.route('/kakaotalk_chatbot_skill', methods=['POST'])
 def kakaotalk_chatbot_skill():
