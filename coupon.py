@@ -18,7 +18,7 @@ def coupon():
     user_coupon[user_id] = []
     
     user_coupon[user_id].append(content)
-    print(user_coupon)
+    print(user_id)
     
     datasend = {
         "version": "2.0",
