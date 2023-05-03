@@ -15,9 +15,7 @@ def coupon():
     content = req['userRequest']['utterance']
     
     user_id = req['userRequest']['user']['id']
-    user_coupon[user_id] = []
     
-    user_coupon[user_id].append(content)
     print(user_id)
     
     datasend = {
