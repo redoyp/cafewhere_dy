@@ -1,6 +1,6 @@
 # flask import
 from flask import Flask, request, jsonify
-from coupon_code_generate import coupon_code
+from coupon_code_generate import *
 
 app = Flask(__name__)
 
