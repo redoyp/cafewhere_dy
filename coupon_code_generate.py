@@ -1,5 +1,5 @@
 import random
-import coupon
+
 def to_base62(n) :
     codec = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
     index = n % 62
