@@ -1,6 +1,5 @@
 # flask import
 from flask import Flask, request, jsonify
-import coupon_db
 from coupon_code_generate import coupon_code
 
 app = Flask(__name__)
