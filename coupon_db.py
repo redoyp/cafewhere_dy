@@ -143,7 +143,7 @@ def getCouponIDCafe(user_id, cafe_name) : # 유저가 쿠폰 뽑았는지 확인
 
     cur = conn.cursor()
 
-    sql = "select ifnull(id, cafe, 0) id, cafe from coupon where id = %s AND cafe = %s";
+    sql = "select id, cafe from coupon where id = %s AND cafe = %s";
     cur.execute(sql, (user_id, cafe_name))
 
     ret = cur.fetchall()
