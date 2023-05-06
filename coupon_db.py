@@ -26,8 +26,8 @@ def getCoupon() : # table 확인 -> 안 쓸 듯
         temp = {'id': e[0], 'code': e[1], 'cafe': e[2]}
         ret.append(temp)
 
-    db.commit()
-    db.close()
+    conn.commit()
+    conn.close()
     return ret
 
 
@@ -50,8 +50,8 @@ def getCode_fordup() : # coupon_code_generate 에서 같은 코드 생성 방지
     for i in codes:
         ret.append(i)
 
-    db.commit()
-    db.close()
+    conn.commit()
+    conn.close()
     return ret
 
 
@@ -70,8 +70,8 @@ def insCoupon(user_id, user_code, cafe_name) : # table에 삽입
 
     curs.execute(sql, (user_id, user_code, cafe_name))
 
-    db.commit()
-    db.close()
+    conn.commit()
+    conn.close()
 
 
 def getCouponCode(user_id, cafe_name) : # 쿠폰 코드 출력 용 + 유저가 쿠폰 뽑았는지 확인 용
@@ -90,8 +90,8 @@ def getCouponCode(user_id, cafe_name) : # 쿠폰 코드 출력 용 + 유저가 �
 
     ret = cur.fetchall()
 
-    db.commit()
-    db.close()
+    conn.commit()
+    conn.close()
     return ret
 
 
