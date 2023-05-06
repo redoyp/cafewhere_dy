@@ -27,7 +27,7 @@ def coupon():
                 "outputs": [
                     {
                         "simpleText": {
-                            "text": "이미 해당 카페의 쿠폰을 받았어요ㅜㅜ"
+                            "text": "이미 해당 카페의 쿠폰을 받았어요ㅜㅜ\n받으신 " + cafe_name + "의 쿠폰 코드는\n" + getCouponCode(user_id, cafe_name) + "\n이에요"
                         }
                     }
                 ]
