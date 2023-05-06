@@ -99,3 +99,5 @@ def getCouponCode(user_id, cafe_name) : # 쿠폰 코드 출력 용 + 유저가 �
 if __name__ == '__main__' : ## coupon code generate test
     coupon_list = getCoupon()
     print(coupon_list)
+    
+print(getCode_fordup())
