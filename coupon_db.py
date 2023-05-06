@@ -29,6 +29,24 @@ def getCoupon() : # table 확인 -> 안 쓸 듯
     conn.commit()
     conn.close()
     return ret
+    
+    
+def delAll() : # table에서 모두 삭제
+    conn = pymysql.connect(host = 'localhost',
+                       user = 'root',
+                       password = '1223334444',
+                       db = 'cafewhere_coupon_db',
+                       charset = 'utf8')
+
+
+    cur = conn.cursor()
+
+    sql = 'delete * from coupon'
+
+    cur.execute(sql)
+
+    conn.commit()
+    conn.close()
 
 
 def getCode_fordup() : # coupon_code_generate 에서 같은 코드 생성 방지
@@ -125,5 +143,7 @@ if __name__ == '__main__' : ## coupon code generate test
     delCoupon('1111', '2222', '3333')
     print(getCoupon())
     delCoupon(1212, 2323, 3434)
+    print(getCoupon())
+    delAll()
     print(getCoupon())
     
