@@ -7,6 +7,8 @@ app = Flask(__name__)
 
 user_code = coupon_dup()
 
+al_code = getCouponCode(user_id, cafe_name)
+
 @app.route('/coupon' ,methods=['POST'])
 def coupon():
 
@@ -19,8 +21,6 @@ def coupon():
     print(user_code)
     print(cafe_name)
     print(getCouponIDCafe(user_id, cafe_name))
-    
-    al_code = getCouponCode(user_id, cafe_name)
 
     if getCouponIDCafe(user_id, cafe_name) == 1 :
         datasend = {
