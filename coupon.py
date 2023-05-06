@@ -36,8 +36,7 @@ def coupon():
             }
         }
     else :
-        count(cafe_name)
-        if count == -2 :
+        if count(cafe_name) == -2 :
             datasend = {
                 "version": "2.0",
                 "template": {
