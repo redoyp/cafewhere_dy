@@ -111,7 +111,7 @@ def getCouponCode(user_id, cafe_name) : # 쿠폰 코드 출력 용 + 유저가 �
 
     conn.commit()
     conn.close()
-    return ret[0]
+    return ret
 
 
 if __name__ == '__main__' : ## coupon code generate test
@@ -121,6 +121,7 @@ if __name__ == '__main__' : ## coupon code generate test
     insCoupon(1212, 2323, 3434)
     print(getCoupon())
     print(getCouponCode(1111, 3333))
+    print(getCode_fordup())
     delCoupon('1111', '2222', '3333')
     print(getCoupon())
     delCoupon(1212, 2323, 3434)
