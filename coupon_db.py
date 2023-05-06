@@ -154,20 +154,20 @@ def getCouponIDCafe(user_id, cafe_name) : # 유저가 쿠폰 뽑았는지 확인
 
 
 if __name__ == '__main__' : ## mysql test
-    print(getCoupon()\n)
+    print(getCoupon())
     insCoupon('1111', '2222', '3333')
     print(getCoupon())
     insCoupon(1212, 2323, 3434)
     print(getCoupon())
     insCoupon('1111', '2222', '4444')
-    print(getCoupon()\n)
+    print(getCoupon())
     print(getCouponCode(1111, 3333))
     print(getCode_fordup())
-    print(getCouponIDCafe(1111, 3333)\n)
+    print(getCouponIDCafe(1111, 3333))
     delCoupon('1111', '2222', '3333')
-    print(getCoupon()\n)
+    print(getCoupon())
     print(getCouponIDCafe(1111, 4444))
-    print(getCouponIDCafe(1111, 3333)\n)
+    print(getCouponIDCafe(1111, 3333))
     delAll()
     print(getCoupon())
     
