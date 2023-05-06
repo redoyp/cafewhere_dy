@@ -2,6 +2,7 @@
 from flask import Flask, request, jsonify
 from coupon_db import *
 from coupon_code_generate import *
+from coupon_count import count
 
 app = Flask(__name__)
 
@@ -35,19 +36,34 @@ def coupon():
             }
         }
     else :
-        insCoupon(user_id, user_code, cafe_name)
-        datasend = {
-            "version": "2.0",
-            "template": {
-                "outputs": [
-                    {
-                        "simpleText": {
-                            "text": cafe_name + " 카페의 쿠폰 코드에요!!\n\n" + user_code
+        count(cafe_name)
+        if count == -2 :
+            datasend = {
+                "version": "2.0",
+                "template": {
+                    "outputs": [
+                        {
+                            "simpleText": {
+                                "text": cafe_name + " 카페의 쿠폰이 모두 소진됐어요ㅜㅜ"
+                            }
                         }
-                    }
-                ]
+                    ]
+                }
             }
-        }
+        else :
+            insCoupon(user_id, user_code, cafe_name)
+            datasend = {
+                "version": "2.0",
+                "template": {
+                    "outputs": [
+                        {
+                            "simpleText": {
+                                "text": cafe_name + " 카페의 쿠폰 코드에요!!\n\n" + user_code
+                            }
+                        }
+                    ]
+                }
+            }
 
     return jsonify(datasend)
 
