@@ -2,7 +2,7 @@
 from flask import Flask, request, jsonify
 from coupon_db import *
 from coupon_code_generate import *
-from coupon_count import count
+from coupon_count import ccount
 
 app = Flask(__name__)
 
