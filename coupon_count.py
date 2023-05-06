@@ -1,4 +1,4 @@
-def count(cafe_name) :
+def ccount(cafe_name) :
     if cafe_name == '스타벅스' :
         count[0] -= 1
         if count[0] == -1 :
