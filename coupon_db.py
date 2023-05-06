@@ -87,7 +87,7 @@ def delCoupon(user_id, user_code, cafe_name) : # table에서 삭제
 
     sql = 'delete from coupon where id = %s AND code = %s AND cafe = %s'
 
-    curs.execute(sql, (user_id, user_code, cafe_name))
+    cur.execute(sql, (user_id, user_code, cafe_name))
 
     conn.commit()
     conn.close()
