@@ -42,7 +42,7 @@ def coupon():
                 "outputs": [
                     {
                         "simpleText": {
-                            "text": cafe_name + "카페의 쿠폰 코드에요!!\n\n" + user_code
+                            "text": cafe_name + " 카페의 쿠폰 코드에요!!\n\n" + user_code
                         }
                     }
                 ]
