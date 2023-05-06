@@ -68,7 +68,7 @@ def insCoupon(user_id, user_code, cafe_name) : # table에 삽입
 
     sql = '''insert into coupon (id, code, cafe) values (%s, %s, %s)'''
 
-    curs.execute(sql, (user_id, user_code, cafe_name))
+    cur.execute(sql, (user_id, user_code, cafe_name))
 
     conn.commit()
     conn.close()
