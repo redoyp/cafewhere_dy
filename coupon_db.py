@@ -1,7 +1,6 @@
 from flask import Flask, request, jsonify
 import pymysql
 
-
 def __init__(self) :
     pass
 
