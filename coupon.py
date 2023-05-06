@@ -18,6 +18,7 @@ def coupon():
     print(user_id)
     print(user_code)
     print(cafe_name)
+    print(getCouponIDCafe(user_id, cafe_name))
 
     if getCouponIDCafe(user_id, cafe_name) == None :
         insCoupon(user_id, user_code, cafe_name)
