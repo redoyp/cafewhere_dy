@@ -37,7 +37,6 @@ def coupon():
         }
     else :
         if ccount(cafe_name) == -2 :
-            print(count[0])
             datasend = {
                 "version": "2.0",
                 "template": {
@@ -51,7 +50,6 @@ def coupon():
                 }
             }
         else :
-            print(count[0])
             insCoupon(user_id, user_code, cafe_name)
             datasend = {
                 "version": "2.0",
