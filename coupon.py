@@ -8,6 +8,10 @@ app = Flask(__name__)
 
 user_code = coupon_dup()
 
+count = [100, 200, 300] # 0 : 스타벅스, 1 : 투썸플레이스, 2: 이디야
+                        # -> 각 카페의 쿠폰 개수 세기
+                        # 한정된 개수를 넘길시 쿠폰 소진 알리기 위함
+
 @app.route('/coupon' ,methods=['POST'])
 def coupon():
 
@@ -36,7 +40,8 @@ def coupon():
             }
         }
     else :
-        if count(cafe_name) == -2 :
+        if ccount(cafe_name) == -2 :
+            print(count[0])
             datasend = {
                 "version": "2.0",
                 "template": {
@@ -50,6 +55,7 @@ def coupon():
                 }
             }
         else :
+            print(count[0])
             insCoupon(user_id, user_code, cafe_name)
             datasend = {
                 "version": "2.0",
