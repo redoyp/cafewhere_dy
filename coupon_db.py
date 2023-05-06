@@ -150,8 +150,10 @@ def getCouponIDCafe(user_id, cafe_name) : # 유저가 쿠폰 뽑았는지 확인
 
     conn.commit()
     conn.close()
-    return ret
-
+    if ret == None :
+        return 0
+    else :
+        return 1
 
 if __name__ == '__main__' : ## mysql test
     print(getCoupon())
