@@ -110,7 +110,7 @@ def delCoupon(user_id, user_code, cafe_name) : # table에서 삭제
     conn.close()
 
 
-def getCouponCode(user_id, cafe_name) : # 쿠폰 코드 출력 용 + 유저가 쿠폰 뽑았는지 확인 용
+def getCouponCode(user_id, cafe_name) : # 쿠폰 코드 출력 용
 
     conn = pymysql.connect(host = 'localhost',
                        user = 'root',
@@ -129,6 +129,28 @@ def getCouponCode(user_id, cafe_name) : # 쿠폰 코드 출력 용 + 유저가 �
     conn.commit()
     conn.close()
     return ret
+    
+    
+def getCouponIDCafe(user_id, cafe_name) : # 유저가 쿠폰 뽑았는지 확인 용
+    ret = []
+
+    conn = pymysql.connect(host = 'localhost',
+                       user = 'root',
+                       password = '1223334444',
+                       db = 'cafewhere_coupon_db',
+                       charset = 'utf8')
+
+
+    cur = conn.cursor()
+
+    sql = "select ifnull(id, cafe, 0) id, cafe from coupon where id = %s AND cafe = %s";
+    cur.execute(sql, (user_id, cafe_name))
+
+    ret = cur.fetchall()
+
+    conn.commit()
+    conn.close()
+    return ret
 
 
 if __name__ == '__main__' : ## coupon code generate test
@@ -140,6 +162,8 @@ if __name__ == '__main__' : ## coupon code generate test
     insCoupon('1111', '2222', '4444')
     print(getCoupon())
     print(getCouponCode(1111, 3333))
+    print(getCode_fordup())
+    print(getCouponIDCafe(1111, 3333))
     print(getCode_fordup())
     delCoupon('1111', '2222', '3333')
     print(getCoupon())
