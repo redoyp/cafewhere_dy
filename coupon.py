@@ -20,7 +20,20 @@ def coupon():
     print(cafe_name)
     print(getCouponIDCafe(user_id, cafe_name))
 
-    if getCouponIDCafe(user_id, cafe_name) == None :
+    if getCouponIDCafe(user_id, cafe_name) != None :
+        datasend = {
+            "version": "2.0",
+            "template": {
+                "outputs": [
+                    {
+                        "simpleText": {
+                            "text": "이미 해당 카페의 쿠폰을 받았어요ㅜㅜ"
+                        }
+                    }
+                ]
+            }
+        }
+    else :
         insCoupon(user_id, user_code, cafe_name)
         datasend = {
             "version": "2.0",
@@ -29,19 +42,6 @@ def coupon():
                     {
                         "simpleText": {
                             "text": cafe_name + " 카페의 쿠폰 코드에요!!\n\n" + user_code
-                        }
-                    }
-                ]
-            }
-        }
-    else :
-        datasend = {
-            "version": "2.0",
-            "template": {
-                "outputs": [
-                    {
-                        "simpleText": {
-                            "text": "이미 해당 카페의 쿠폰을 받았어요ㅜㅜ"
                         }
                     }
                 ]
