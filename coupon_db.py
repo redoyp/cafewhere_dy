@@ -120,7 +120,8 @@ if __name__ == '__main__' : ## coupon code generate test
     insCoupon('1111', '2222', '3333')
     print(coupon__list)
     print(getCouponCode('1111', '3333'))
-    print(getCouponCode('1111', '2222')
+    print(getCouponCode('1111', '2222'))
+    print(getCode_fordup())
     delCoupon('1111', '2222', '3333')
     print(coupon_list)
     
