@@ -19,6 +19,8 @@ def coupon():
     print(user_code)
     print(cafe_name)
     print(getCouponIDCafe(user_id, cafe_name))
+    
+    al_code = getCouponCode(user_id, cafe_name)
 
     if getCouponIDCafe(user_id, cafe_name) == 1 :
         datasend = {
@@ -27,7 +29,7 @@ def coupon():
                 "outputs": [
                     {
                         "simpleText": {
-                            "text": "이미 해당 카페의 쿠폰을 받았어요ㅜㅜ\n받으신 " + cafe_name + "의 쿠폰 코드는\n" + getCouponCode(user_id, cafe_name) + "\n이에요"
+                            "text": "이미 해당 카페의 쿠폰을 받았어요ㅜㅜ\n받으신 " + cafe_name + "의 쿠폰 코드는\n" + al_code + "\n이에요"
                         }
                     }
                 ]
