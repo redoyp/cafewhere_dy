@@ -20,7 +20,6 @@ def coupon():
     print(user_code)
     print(cafe_name)
     print(getCouponIDCafe(user_id, cafe_name))
-    print(count[0])
     
 
     if getCouponIDCafe(user_id, cafe_name) == 1 :
