@@ -111,7 +111,7 @@ def getCouponCode(user_id, cafe_name) : # 쿠폰 코드 출력 용 + 유저가 �
 
     conn.commit()
     conn.close()
-    return ret
+    return ret[0]
 
 
 if __name__ == '__main__' : ## coupon code generate test
