@@ -14,8 +14,6 @@ def coupon():
     cafe_name = req['userRequest']['utterance']
 
     user_id = req['userRequest']['user']['id']
-    
-    al_code = getCouponCode(user_id, cafe_name)
 
     print(user_id)
     print(user_code)
@@ -31,7 +29,7 @@ def coupon():
                 "outputs": [
                     {
                         "simpleText": {
-                            "text": "이미 해당 카페의 쿠폰을 받았어요ㅜㅜ\n받으신 " + cafe_name + "의 쿠폰 코드는\n" + al_code + "\n이에요"
+                            "text": "이미 해당 카페의 쿠폰을 받았어요ㅜㅜ\n받으신 " + cafe_name + "의 쿠폰 코드는\n" + getCouponCode(user_id, cafe_name) + "\n이에요"
                         }
                     }
                 ]
