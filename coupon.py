@@ -10,12 +10,13 @@ code = coupon_code()
 def coupon():
 
     req = request.get_json()
-    content = req['userRequest']['utterance']
+    cafe = req['userRequest']['utterance']
 
     user_id = req['userRequest']['user']['id']
 
     print(user_id)
     print(code)
+    print(cafe)
 
     datasend = {
         "version": "2.0",
