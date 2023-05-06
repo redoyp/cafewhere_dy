@@ -20,7 +20,7 @@ def coupon():
     print(cafe_name)
     print(getCouponIDCafe(user_id, cafe_name))
 
-    if getCouponIDCafe(user_id, cafe_name) == 0 :
+    if getCouponIDCafe(user_id, cafe_name) == 1 :
         datasend = {
             "version": "2.0",
             "template": {
