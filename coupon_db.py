@@ -41,7 +41,7 @@ def delAll() : # table에서 모두 삭제
 
     cur = conn.cursor()
 
-    sql = 'delete table coupon'
+    sql = 'truncate coupon'
 
     cur.execute(sql)
 
