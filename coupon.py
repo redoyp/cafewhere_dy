@@ -14,15 +14,13 @@ def coupon():
     cafe_name = req['userRequest']['utterance']
 
     user_id = req['userRequest']['user']['id']
-    
-    check = getCouponIDCafe(user_id, cafe_name)
 
     print(user_id)
     print(user_code)
     print(cafe_name)
-    print(check)
+    print(getCouponIDCafe(user_id, cafe_name))
 
-    if check != None :
+    if getCouponIDCafe(user_id, cafe_name) != None :
         datasend = {
             "version": "2.0",
             "template": {
