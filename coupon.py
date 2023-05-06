@@ -1,37 +1,56 @@
 # flask import
 from flask import Flask, request, jsonify
+from coupon_db import *
 from coupon_code_generate import *
 
 app = Flask(__name__)
 
-code = coupon_code()
+user_code = coupon_dup()
 
 @app.route('/coupon' ,methods=['POST'])
 def coupon():
 
     req = request.get_json()
-    cafe = req['userRequest']['utterance']
+    cafe_name = req['userRequest']['utterance']
 
     user_id = req['userRequest']['user']['id']
 
     print(user_id)
-    print(code)
-    print(cafe)
+    print(user_code)
+    print(cafe_name)
 
-    datasend = {
-        "version": "2.0",
-        "template": {
-            "outputs": [
-                {
-                    "simpleText": {
-                        "text": "user_id 확인"
+    dup = getCouponCode(user_id, cafe_name)
+
+    if user_code == dup :
+        datasend = {
+            "version": "2.0",
+            "template": {
+                "outputs": [
+                    {
+                        "simpleText": {
+                            "text": "이미 해당 카페의 쿠폰을 받았어요ㅜㅜ"
+                        }
                     }
-                }
-            ]
+                ]
+            }
         }
-    }
+    else :
+        insCoupon(user_id, user_code, cafe_name)
+        datasend = {
+            "version": "2.0",
+            "template": {
+                "outputs": [
+                    {
+                        "simpleText": {
+                            "text": cafe_name + "카페의 쿠폰 코드에요!!\n\n" + user_code
+                        }
+                    }
+                ]
+            }
+        }
 
     return jsonify(datasend)
+
 
 # 메인 함수
 if __name__ == '__main__':
