@@ -125,10 +125,11 @@ def getCouponCode(user_id, cafe_name) : # 쿠폰 코드 출력 용
     cur.execute(sql, (user_id, cafe_name))
 
     ret = cur.fetchone()
+    str = ''.join(ret)
 
     conn.commit()
     conn.close()
-    return ret
+    return str
     
     
 def getCouponIDCafe(user_id, cafe_name) : # 유저가 쿠폰 뽑았는지 확인 용
