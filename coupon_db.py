@@ -142,8 +142,6 @@ if __name__ == '__main__' : ## coupon code generate test
     print(getCode_fordup())
     delCoupon('1111', '2222', '3333')
     print(getCoupon())
-    delCoupon(1212, 2323, 3434)
-    print(getCoupon())
     delAll()
     print(getCoupon())
     
