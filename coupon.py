@@ -12,28 +12,6 @@ def coupon():
     req = request.get_json()
     content = req['userRequest']['utterance']
 
-    datasend = {
-        "version": "2.0",
-        "template": {
-            "outputs": [
-                {
-                    "simpleText": {
-                        "text": "카페 이벤트 쿠폰을 받을 수 있습니다!!\n원하시는 카페 쿠폰을 눌러주세요"
-                    }
-                }
-            ]
-        }
-    }
-
-    return jsonify(datasend)
-
-
-@app.route('/coupon' ,methods=['POST'])
-def coupon():
-
-    req = request.get_json()
-    content = req['userRequest']['utterance']
-
     user_id = req['userRequest']['user']['id']
 
     print(user_id)
