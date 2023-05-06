@@ -19,9 +19,9 @@ def coupon():
     print(user_code)
     print(cafe_name)
 
-    dup = getCouponCode(user_id, cafe_name)
+    dup = getCouponIDCafe(user_id, cafe_name)
 
-    if user_code == dup :
+    if user_id == dup[0] and cafe_name == dup[1] :
         datasend = {
             "version": "2.0",
             "template": {
