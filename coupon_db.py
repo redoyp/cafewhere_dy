@@ -124,7 +124,7 @@ def getCouponCode(user_id, cafe_name) : # 쿠폰 코드 출력 용
     sql = "select ifnull(code,0) code from coupon where id = %s AND cafe = %s";
     cur.execute(sql, (user_id, cafe_name))
 
-    ret = cur.fetchall()
+    ret = cur.fetchone()
 
     conn.commit()
     conn.close()
