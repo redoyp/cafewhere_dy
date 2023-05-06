@@ -1,5 +1,4 @@
 import random
-import coupon
 from coupon_db import getCode_fordup
 
 def to_base62(n) :
