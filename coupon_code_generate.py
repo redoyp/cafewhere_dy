@@ -1,4 +1,6 @@
 import random
+import coupon
+from coupon_db import getCode_fordup
 
 def to_base62(n) :
     codec = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -19,3 +21,12 @@ def coupon_code() :
         string.append(num)
 
     return "".join(string)
+
+def coupon_dup() :
+    code = coupon_code()
+    temp = getCode_fordup()
+
+    if code in temp :
+        return coupon_dup()
+
+    return code
