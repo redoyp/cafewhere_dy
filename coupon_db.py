@@ -153,7 +153,7 @@ def getCouponIDCafe(user_id, cafe_name) : # 유저가 쿠폰 뽑았는지 확인
     return ret
 
 
-if __name__ == '__main__' : ## coupon code generate test
+if __name__ == '__main__' : ## mysql test
     print(getCoupon())
     insCoupon('1111', '2222', '3333')
     print(getCoupon())
