@@ -1,5 +1,4 @@
 from flask import Flask, request, jsonify
-from coupon_code_generate import coupon_code
 import pymysql
 
 
