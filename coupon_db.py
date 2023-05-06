@@ -122,4 +122,5 @@ if __name__ == '__main__' : ## coupon code generate test
     print(getCoupon())
     delCoupon('1111', '2222', '3333')
     print(getCoupon())
+    print(getCouponCode(1111, 3333))
     
