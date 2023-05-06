@@ -154,19 +154,6 @@ def getCouponIDCafe(user_id, cafe_name) : # 유저가 쿠폰 뽑았는지 확인
 
 
 if __name__ == '__main__' : ## coupon code generate test
-    print(getCoupon())
-    insCoupon('1111', '2222', '3333')
-    print(getCoupon())
-    insCoupon(1212, 2323, 3434)
-    print(getCoupon())
-    insCoupon('1111', '2222', '4444')
-    print(getCoupon())
-    print(getCouponCode(1111, 3333))
-    print(getCode_fordup())
-    print(getCouponIDCafe(1111, 3333))
-    print(getCode_fordup())
-    delCoupon('1111', '2222', '3333')
-    print(getCoupon())
     delAll()
     print(getCoupon())
     
