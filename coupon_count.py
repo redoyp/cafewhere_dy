@@ -18,3 +18,9 @@ def ccount(cafe_name) :
         if count[2] == -1 :
             return -2
         return count[2]
+      
+def count_show() :
+  return count
+  
+if __name__ == '__main__' : ## mysql test
+    print(count_show())
