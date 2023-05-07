@@ -18,4 +18,3 @@ def ccount(cafe_name) :
         if count[2] == -1 :
             return -2
         return count[2]
-        
