@@ -155,6 +155,29 @@ def getCouponIDCafe(user_id, cafe_name) : # 유저가 쿠폰 뽑았는지 확인
         return 0
     else :
         return 1
+    
+    
+def getCouponCount(cafe_name) : # 특정 카페의 쿠폰 발급 횟수 -> 개수 한정 위해 필
+    ret = []
+
+    conn = pymysql.connect(host = 'localhost',
+                       user = 'root',
+                       password = '1223334444',
+                       db = 'cafewhere_coupon_db',
+                       charset = 'utf8')
+
+
+    cur = conn.cursor()
+
+    sql = "select count(cafe) from coupon where cafe = %s";
+    cur.execute(sql, (cafe_name))
+    
+    ret = cur.fetchone()
+
+    conn.commit()
+    conn.close()
+    return ret
+ 
 
 if __name__ == '__main__' : ## mysql test
     print(getCoupon())
@@ -163,7 +186,9 @@ if __name__ == '__main__' : ## mysql test
     insCoupon(1212, 2323, 3434)
     print(getCoupon())
     insCoupon('1111', '2222', '4444')
+    insCoupon('2233', '4545', '4444')
     print(getCoupon())
+    print(getCouponCount(4444))
     print(getCouponCode(1111, 3333))
     print(getCode_fordup())
     print(getCouponIDCafe(1111, 3333))
