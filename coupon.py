@@ -44,8 +44,8 @@ def coupon():
             }
         }
     else :
-        if getCouponCount(cafe_name, limit) == 0 :
-            print(coupons)
+        if getCouponCount(cafe_name) > limit :
+            print(getCouponCount(cafe_name))
             datasend = {
                 "version": "2.0",
                 "template": {
