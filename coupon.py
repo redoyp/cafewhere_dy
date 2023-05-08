@@ -23,6 +23,13 @@ def coupon():
     print(cafe_name)
     print(getCouponIDCafe(user_id, cafe_name))
     
+    if cafe_name = '스타벅스' :
+        limit = count[0]
+    elif cafe_name = '투썸플레이스' :
+        limit = count[1]
+    elif cafe_name = '이디야' :
+        limit = count[2]
+    
 
     if getCouponIDCafe(user_id, cafe_name) == 1 :
         datasend = {
@@ -38,7 +45,6 @@ def coupon():
             }
         }
     else :
-        coupons = ccount(cafe_name)
         if getCouponCount(cafe_name, limit) == 0 :
             print(coupons)
             datasend = {
