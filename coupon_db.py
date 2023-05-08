@@ -191,7 +191,7 @@ if __name__ == '__main__' : ## mysql test
     insCoupon('2233', '4545', '4444')
     print(getCoupon())
     print(getCouponCount(4444, 2))
-    print(getCouponCount(4444, 3))
+    print(getCouponCount(4444, 1))
     print(getCouponCode(1111, 3333))
     print(getCode_fordup())
     print(getCouponIDCafe(1111, 3333))
