@@ -8,6 +8,8 @@ app = Flask(__name__)
 
 user_code = coupon_dup()
 
+count = [100, 200, 300]  # 스타벅스, 투썸플레이스, 이디야 순서로 쿠폰 개수 제한
+
 @app.route('/coupon' ,methods=['POST'])
 def coupon():
 
@@ -37,7 +39,7 @@ def coupon():
         }
     else :
         coupons = ccount(cafe_name)
-        if coupons == -2 :
+        if getCouponCount(cafe_name, limit) == 0 :
             print(coupons)
             datasend = {
                 "version": "2.0",
@@ -52,7 +54,6 @@ def coupon():
                 }
             }
         else :
-            print(coupons)
             insCoupon(user_id, user_code, cafe_name)
             datasend = {
                 "version": "2.0",
