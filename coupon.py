@@ -17,9 +17,7 @@ def coupon():
 
     user_id = req['userRequest']['user']['id']
 
-    print(user_id)
-    print(user_code)
-    print(cafe_name)
+    print(user_id, user_code, cafe_name)
     print(getCouponIDCafe(user_id, cafe_name))
     
     if cafe_name == '스타벅스' :
