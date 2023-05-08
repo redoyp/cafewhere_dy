@@ -182,7 +182,23 @@ def getCouponCount(cafe_name, limit) : # 특정 카페의 쿠폰 발급 횟수 -
     
 
 if __name__ == '__main__' : ## mysql test
-
+    print(getCoupon())
+    insCoupon('1111', '2222', '3333')
+    print(getCoupon())
+    insCoupon(1212, 2323, 3434)
+    print(getCoupon())
+    insCoupon('1111', '2222', '4444')
+    insCoupon('2233', '4545', '4444')
+    print(getCoupon())
+    print(getCouponCount(4444, 2))
+    print(getCouponCount(4444, 3))
+    print(getCouponCode(1111, 3333))
+    print(getCode_fordup())
+    print(getCouponIDCafe(1111, 3333))
+    delCoupon('1111', '2222', '3333')
+    print(getCoupon())
+    print(getCouponIDCafe(1111, 4444))
+    print(getCouponIDCafe(1111, 3333))
     delAll()
     print(getCoupon())
     
