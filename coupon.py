@@ -45,7 +45,7 @@ def coupon():
         }
     else :
         if getCouponCount(cafe_name) > limit :
-            print(getCouponCount(cafe_name))
+            print(getCouponCount(cafe_name), limit)
             datasend = {
                 "version": "2.0",
                 "template": {
@@ -60,6 +60,7 @@ def coupon():
             }
         else :
             insCoupon(user_id, user_code, cafe_name)
+            print(getCouponCount(cafe_name), limit)
             datasend = {
                 "version": "2.0",
                 "template": {
