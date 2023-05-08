@@ -176,7 +176,7 @@ def getCouponCount(cafe_name, limit) : # 특정 카페의 쿠폰 발급 횟수 -
     conn.commit()
     conn.close()
     if ret[0] <= limit :
-        return 1
+        return 1, ret[0]
     else :
         return 0
     
