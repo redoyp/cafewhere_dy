@@ -9,7 +9,7 @@ answerlist = {}
 
 user_mbti = {}
 
-def flask_mbti():
+class flask_mbti():
     
     @app.route('/mbti_home',methods=['POST'])
     def mbti_home():
