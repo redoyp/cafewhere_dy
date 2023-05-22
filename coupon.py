@@ -9,7 +9,7 @@ user_code = coupon_dup()
 
 count = [0, 200, 300]  # 스타벅스, 투썸플레이스, 이디야 순서로 쿠폰 개수 제한
 
-def flask_coupon(): 
+class flask_coupon(): 
     
     @app.route('/coupon' ,methods=['POST'])
     def coupon():
