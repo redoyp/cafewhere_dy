@@ -1,17 +1,15 @@
+import os
 import openai
 
 openai.api_key = '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'
 
-messages = []
-while True:
-  content = input("User: ")
-  messages.append({"role":"user", "content":content})
+question = input("무엇을 물어볼까요?: ")
 
-  completion = openai.ChatCompletion.create(
-      model="gpt-3.5-turbo",
-      messages=messages
-  )
+completion = openai.ChatCompletion.create(
+  model="gpt-3.5-turbo",
+  messages=[
+    {"role": "user", "content": question}
+  ]
+)
 
-  chat_response = completion.choices[0].message.content
-  print(f'ChatGPT: {chat_response}')
-  messages.append({"role":"assistant", "content": chat_response})
+print(completion.choices[0].message.content)
