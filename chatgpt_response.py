@@ -15,7 +15,7 @@ def chatgpt_response():
             "outputs": [
                {	
                     "simpleText": {
-                        "text": "입력 테스트"
+                        "text": "테스트"
                     }
                 }
             ]
