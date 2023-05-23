@@ -27,6 +27,20 @@ def chatgpt_response():
                 ]
             }
         }
+    else :
+        datasend = {
+            "version": "2.0",
+            "template": {
+                "outputs": [
+                    {	
+                        "simpleText": {
+                            "text": "다시 한 번 물어봐주세요. 맨 앞에 ' gpt! ' 라고 꼭 붙이셔야 합니다"
+                        }
+                    }
+                ]
+            }
+        }
+        
     
     return jsonify(datasend)
   
