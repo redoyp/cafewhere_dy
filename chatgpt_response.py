@@ -9,37 +9,23 @@ def chatgpt_response():
     req = request.get_json()
     content = req['userRequest']['utterance']
     
-    if content[:4] == "gpt!" :  
-        datasend = {
-            "version": "2.0",
-            "template": {
-                "outputs": [
-                    {	
-                        "simpleText": {
-                            "text": "테스트"
-                        }
-                    },
-                    {	
-                        "simpleText": {
-                            "text": content
-                        }
+    datasend = {
+        "version": "2.0",
+        "template": {
+            "outputs": [
+                {	
+                    "simpleText": {
+                        "text": "테스트"
                     }
-                ]
-            }
-        }
-    else :
-        datasend = {
-            "version": "2.0",
-            "template": {
-                "outputs": [
-                    {	
-                        "simpleText": {
-                            "text": "다시 한 번 물어봐주세요. 맨 앞에 ' gpt! ' 라고 꼭 붙이셔야 합니다"
-                        }
+                },
+                {	
+                    "simpleText": {
+                        "text": content
                     }
-                ]
-            }
+                }
+            ]
         }
+    }
         
     
     return jsonify(datasend)
