@@ -17,6 +17,11 @@ def chatgpt_response():
                     "simpleText": {
                         "text": "테스트"
                     }
+                },
+                {	
+                    "simpleText": {
+                        "text": content
+                    }
                 }
             ]
         }
