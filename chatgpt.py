@@ -1,44 +1,17 @@
-# -*- coding: utf-8 -*-
 import openai
-from config import *
-import time
-openai.api_key = ''
 
-print("chatGPT를 종료하려면 'bye'를 입력하세요.\n")
-content = ''
+openai.api_key  = ''
 
+messages = []
 while True:
+  content = input("User: ")
+  messages.append({"role":"user", "content":content})
 
-    prompt = input("명령을 내려 주세요: ")
-    try:
-        messages = [
-                {'role': 'system', 'content': 'You are a helpful assistant.'},
-                {'role': 'user', 'content': content},
-            ]
-        messages.append({'role': 'assistant', 'content': msg })
+  completion = openai.ChatCompletion.create(
+      model="gpt-3.5-turbo",
+      messages=messages
+  )
 
-        messages.append({'role': 'user', 'content': prompt })
-    except:
-        messages = [
-                {'role': 'system', 'content': 'You are a helpful assistant.'},
-                {'role': 'user', 'content': prompt},
-            ]
-
-    if prompt == 'bye':
-        print("chatGPT를 종료합니다.")
-        break
-
-    response = openai.ChatCompletion.create(
-        model='gpt-3.5-turbo',
-        messages=messages
-    )
-
-    print(response)
-    print("--------------------------------")
-    print(str(response['choices'][0]['message']['content']).strip())
-    msg = str(response['choices'][0]['message']['content']).strip()
-    print("--------------------------------")
-
-    time.sleep(1)
-
-    content = content + msg
+  chat_response = completion.choices[0].message.content
+  print(f'ChatGPT: {chat_response}')
+  messages.append({"role":"assistant", "content": chat_response})
