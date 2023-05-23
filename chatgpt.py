@@ -2,7 +2,7 @@
 import openai
 from config import *
 import time
-openai.api_key = ''
+openai.api_key = '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'
 
 print("chatGPT를 종료하려면 'bye'를 입력하세요.\n")
 content = ''
