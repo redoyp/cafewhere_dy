@@ -1,11 +1,10 @@
 # flask import
 from flask import Flask, request, jsonify
-import chatgpt
 
 app = Flask(__name__)
 
 @app.route('/chatgpt_response',methods=['POST'])
-def mbti_home():
+def chatgpt_response():
     
     req = request.get_json()
     content = req['userRequest']['utterance']
@@ -16,7 +15,7 @@ def mbti_home():
             "outputs": [
                 {	
                     "simpleText": {
-                        "text": answer
+                        "text": content
                     }
                 }
             ]
