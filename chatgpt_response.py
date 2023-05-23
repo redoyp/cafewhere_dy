@@ -13,6 +13,11 @@ def chatgpt_response():
         "version": "2.0",
         "template": {
             "outputs": [
+               {	
+                    "simpleText": {
+                        "text": "입력 테스트"
+                    }
+                },
                 {	
                     "simpleText": {
                         "text": content
