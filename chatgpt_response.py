@@ -9,23 +9,24 @@ def chatgpt_response():
     req = request.get_json()
     content = req['userRequest']['utterance']
     
-    datasend = {
-        "version": "2.0",
-        "template": {
-            "outputs": [
-               {	
-                    "simpleText": {
-                        "text": "테스트"
+    if "gpt!" in content :
+        datasend = {
+            "version": "2.0",
+            "template": {
+                "outputs": [
+                   {	
+                        "simpleText": {
+                            "text": "테스트"
+                        }
+                    },
+                    {	
+                        "simpleText": {
+                            "text": content
+                        }
                     }
-                },
-                {	
-                    "simpleText": {
-                        "text": content
-                    }
-                }
-            ]
+                ]
+            }
         }
-    }
     
     return jsonify(datasend)
   
