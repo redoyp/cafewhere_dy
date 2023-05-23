@@ -17,11 +17,6 @@ def chatgpt_response():
                     "simpleText": {
                         "text": "입력 테스트"
                     }
-                },
-                {	
-                    "simpleText": {
-                        "text": content
-                    }
                 }
             ]
         }
