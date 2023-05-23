@@ -1,14 +1,15 @@
 import os
 import openai
+import chatgpt_response
 
 openai.api_key =""
-question = input("무엇을 물어볼까요?: ")
+question = content
 
 completion = openai.ChatCompletion.create(
   model="gpt-3.5-turbo",
   messages=[
-    {"role": "user", "content": question}
+    {"role": "user", "content": content}
   ]
 )
 
-print(completion.choices[0].message.content)
+answer = completion.choices[0].message.content
