@@ -3,8 +3,8 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-@app.route('/chatgpt_response',methods=['POST'])
-def chatgpt_response():
+@app.route('/chatgpt',methods=['POST'])
+def chatgpt():
     
     req = request.get_json()
     content = req['userRequest']['utterance']
