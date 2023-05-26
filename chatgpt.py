@@ -10,7 +10,7 @@ def gpt(question) :
     model="gpt-3.5-turbo",
     messages=[
       {"role": "user", "content": question}
-    ]
+    ],
     max_tokens = 2048
   )
 
