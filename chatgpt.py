@@ -35,7 +35,7 @@ def chatgpt():
               "outputs": [
                   {	
                       "simpleText": {
-                          "text": answer
+                          "text": '만나서 반가웠어요~'
                       }
                   }
               ]
@@ -48,7 +48,7 @@ def chatgpt():
               "outputs": [
                   {	
                       "simpleText": {
-                          "text": '만나서 반가웠어요~'
+                          "text": 
                       }
                   }
               ]
