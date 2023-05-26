@@ -50,7 +50,24 @@ def chatgpt():
                       "simpleText": {
                           "text": answer
                       }
+                  },
+                  {	
+                      "simpleText": {
+                          "text": "궁금한 점이 더 있으신가요??"
+                      }
                   }
+              ],
+              "quickReplies": [
+                  {
+                      "label": "네",
+                      "action": "block",
+                      "blockId": "646d0039261683267f04dd38"
+                  },
+                  {
+                      "label": "아니요",
+                      "action": "block",
+                      "blockId": "63be8e5413b6a940ee25dfa0"
+                  },
               ]
           }
       }
