@@ -48,7 +48,7 @@ def chatgpt():
               "outputs": [
                   {	
                       "simpleText": {
-                          "text": 
+                          "text": answer
                       }
                   }
               ]
