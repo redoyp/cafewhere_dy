@@ -11,6 +11,7 @@ def gpt(question) :
     messages=[
       {"role": "user", "content": question}
     ]
+    max_tokens = 2048
   )
 
   answer = completion.choices[0].message.content
