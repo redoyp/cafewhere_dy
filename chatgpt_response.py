@@ -22,7 +22,7 @@ def chatgpt_response():
                 },
                 {	
                     "simpleText": {
-                        "text": content + research
+                        "text": content + question
                     }
                 }
             ]
