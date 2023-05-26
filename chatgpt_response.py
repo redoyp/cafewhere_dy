@@ -9,7 +9,7 @@ def chatgpt_response():
     req = request.get_json()
     content = req['userRequest']['utterance']
     question = req['action']['params']
-    print(content)
+    print(content, question)
     
     datasend = {
         "version": "2.0",
