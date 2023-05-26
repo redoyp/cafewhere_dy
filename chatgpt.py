@@ -34,12 +34,12 @@ def chatgpt():
             "outputs": [
                 {	
                     "simpleText": {
-                        "text": "테스트"
+                        "text": "답변을 기다려주세요~"
                     }
                 },
                 {	
                     "simpleText": {
-                        "text": question + answer
+                        "text": answer
                     }
                 }
             ]
