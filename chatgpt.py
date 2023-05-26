@@ -2,7 +2,6 @@
 from flask import Flask, request, jsonify
 import os
 import openai
-import chatgpt_response
 
 def gpt(question) :
   openai.api_key =""
