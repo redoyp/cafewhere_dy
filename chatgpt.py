@@ -1,22 +1,6 @@
 # flask import
 from flask import Flask, request, jsonify
-import os
-import openai
-
-def gpt(question) :
-  openai.api_key =""
-
-  completion = openai.ChatCompletion.create(
-    model="gpt-3.5-turbo",
-    messages=[
-      {"role": "user", "content": question}
-    ],
-    max_tokens = 2048
-  )
-
-  answer = completion.choices[0].message.content
-  return answer
-
+from gpt_model import gpt
 
 app = Flask(__name__)
 
