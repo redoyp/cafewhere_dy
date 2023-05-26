@@ -28,23 +28,32 @@ def chatgpt():
     print(question)
     print(answer)
     
-    datasend = {
-        "version": "2.0",
-        "template": {
-            "outputs": [
-                {	
-                    "simpleText": {
-                        "text": "답변을 기다려주세요~"
-                    }
-                },
-                {	
-                    "simpleText": {
-                        "text": answer
-                    }
-                }
-            ]
-        }
-    }
+    if question == '끝' :
+      datasend = {
+          "version": "2.0",
+          "template": {
+              "outputs": [
+                  {	
+                      "simpleText": {
+                          "text": answer
+                      }
+                  }
+              ]
+          }
+      }
+    else :
+      datasend = {
+          "version": "2.0",
+          "template": {
+              "outputs": [
+                  {	
+                      "simpleText": {
+                          "text": '만나서 반가웠어요~'
+                      }
+                  }
+              ]
+          }
+      }
         
     
     return jsonify(datasend)
