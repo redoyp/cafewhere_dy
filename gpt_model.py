@@ -3,7 +3,7 @@ import openai
 
 def gpt(question) :
   openai.api_key =""
-  limit = "50자 이내로 "
+  limit = "50자 이내로 말해줘."
   quest = limit + question
 
   completion = openai.ChatCompletion.create(
