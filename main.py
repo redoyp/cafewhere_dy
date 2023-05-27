@@ -1,12 +1,14 @@
 # flask import
 from flask import Flask
-form 
+from chatgpt import gpt_server
+from coupon import coupon_server
+from mbti import mbti_server
 
 app = Flask(__name__)
-api = Api(app)
 
-api.add_resource(flask_coupon, '/')
-api.add_resource(flask_mbti, '/')
+app.register_blueprint(gpt_server)
+app.register_blueprint(coupon_server)
+app.register_blueprint(mbti_server)
 
 # 메인 함수
 if __name__ == '__main__':
