@@ -3,11 +3,13 @@ import openai
 
 def gpt(question) :
   openai.api_key =""
+  limit = "50자 이내로 "
+  quest = limit + question
 
   completion = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
     messages=[
-      {"role": "user", "content": question}
+      {"role": "user", "content": quest}
     ],
     max_tokens = 50
   )
