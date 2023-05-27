@@ -1,16 +1,16 @@
 # flask import
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, Blueprint
 
 from mbti_model import result
 
-app = Flask(__name__)
+mbti_server = Blueprint('mbti_server', __name__)
 
 answerlist = {}
 
 user_mbti = {}
 
 
-@app.route('/mbti_home',methods=['POST'])
+@mbti_server.route('/mbti_home',methods=['POST'])
 def mbti_home():
     
     req = request.get_json()
@@ -50,7 +50,7 @@ def mbti_home():
 
 
 
-@app.route('/answer1',methods=['POST'])
+@mbti_server.route('/answer1',methods=['POST'])
 def answer1():
     
     req = request.get_json()
@@ -91,7 +91,7 @@ def answer1():
 
 
 
-@app.route('/answer2',methods=['POST'])
+@mbti_server.route('/answer2',methods=['POST'])
 def answer2():
     
     req = request.get_json()
@@ -132,7 +132,7 @@ def answer2():
 
 
 
-@app.route('/answer3',methods=['POST'])
+@mbti_server.route('/answer3',methods=['POST'])
 def answer3():
     
     req = request.get_json()
@@ -173,7 +173,7 @@ def answer3():
 
 
 
-@app.route('/answer4',methods=['POST'])
+@mbti_server.route('/answer4',methods=['POST'])
 def answer4():
     
     req = request.get_json()
@@ -214,7 +214,7 @@ def answer4():
 
 
 
-@app.route('/answer5',methods=['POST'])
+@mbti_server.route('/answer5',methods=['POST'])
 def answer5():
     
     req = request.get_json()
@@ -255,7 +255,7 @@ def answer5():
 
 
 
-@app.route('/answer6',methods=['POST'])
+@mbti_server.route('/answer6',methods=['POST'])
 def answer6():
     
     req = request.get_json()
@@ -296,7 +296,7 @@ def answer6():
 
 
 
-@app.route('/answer7',methods=['POST'])
+@mbti_server.route('/answer7',methods=['POST'])
 def answer7():
     
     req = request.get_json()
@@ -337,7 +337,7 @@ def answer7():
 
 
 
-@app.route('/answer8',methods=['POST'])
+@mbti_server.route('/answer8',methods=['POST'])
 def answer8():
     
     req = request.get_json()
@@ -378,7 +378,7 @@ def answer8():
 
 
 
-@app.route('/answer9',methods=['POST'])
+@mbti_server.route('/answer9',methods=['POST'])
 def answer9():
     
     req = request.get_json()
@@ -419,7 +419,7 @@ def answer9():
 
 
 
-@app.route('/answer10',methods=['POST'])
+@mbti_server.route('/answer10',methods=['POST'])
 def answer10():
     
     req = request.get_json()
@@ -460,7 +460,7 @@ def answer10():
 
 
 
-@app.route('/answer11',methods=['POST'])
+@mbti_server.route('/answer11',methods=['POST'])
 def answer11():
     
     req = request.get_json()
@@ -501,7 +501,7 @@ def answer11():
 
 
 
-@app.route('/answer12',methods=['POST'])
+@mbti_server.route('/answer12',methods=['POST'])
 def answer12():
     
     req = request.get_json()
@@ -537,7 +537,7 @@ def answer12():
     
     
     
-@app.route('/mbti',methods=['POST'])
+@mbti_server.route('/mbti',methods=['POST'])
 def mbti():
     
     req = request.get_json()
@@ -764,9 +764,3 @@ def mbti():
     user_mbti.pop(user_id)
     
     return jsonify(datasend)
-    
-
-
-# 메인 함수
-if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=5000, threaded=True)
