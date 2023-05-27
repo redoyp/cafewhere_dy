@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify, Blueprint
 from coupon_db import *
 from coupon_code_generate import *
 
-coupon_server = Bleuprint('coupon_server', __name__)
+coupon_server = Blueprint('coupon_server', __name__)
 
 user_code = coupon_dup()
 
