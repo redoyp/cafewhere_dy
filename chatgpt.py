@@ -1,10 +1,10 @@
 # flask import
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, Blueprint
 from gpt_model import gpt
 
-app = Flask(__name__)
+gpt_server = Blueprint('gpt_server', __name__)
 
-@app.route('/chatgpt',methods=['POST'])
+@gpt_server.route('/chatgpt',methods=['POST'])
 def chatgpt():
     
     req = request.get_json()
@@ -59,7 +59,3 @@ def chatgpt():
         
     
     return jsonify(datasend)
-  
-# 메인 함수
-if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=5000, threaded=True)
