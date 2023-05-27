@@ -1,15 +1,15 @@
 # flask import
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, Blueprint
 from coupon_db import *
 from coupon_code_generate import *
 
-app = Flask(__name__)
+coupon_server = Bleuprint('coupon_server', __name__)
 
 user_code = coupon_dup()
 
 count = [0, 200, 300]  # 스타벅스, 투썸플레이스, 이디야 순서로 쿠폰 개수 제한
 
-@app.route('/coupon' ,methods=['POST'])
+@coupon_server.route('/coupon' ,methods=['POST'])
 def coupon():
 
     req = request.get_json()
