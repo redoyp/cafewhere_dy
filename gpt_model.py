@@ -9,7 +9,7 @@ def gpt(question) :
     messages=[
       {"role": "user", "content": question}
     ],
-    max_tokens = 100
+    max_tokens = 50
   )
 
   answer = completion.choices[0].message.content
