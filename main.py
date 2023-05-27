@@ -1,8 +1,6 @@
 # flask import
-from flask import Flask, request, jsonify
-from flask_restful import Resource, Api
-from coupon import flask_coupon
-from mbti import flask_mbti
+from flask import Flask
+form 
 
 app = Flask(__name__)
 api = Api(app)
