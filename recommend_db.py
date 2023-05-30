@@ -11,8 +11,11 @@ class recommend_DAO():
         
 
     def connect(self):        
-        self.conn = pymysql.connect(host=conf.db['host'], user=conf.db['user'], passwd=conf.db['password'],
-                                    db="cafewhere", charset="utf8")
+        self.conn = pymysql.connect(host = 'localhost',
+                       user = 'root',
+                       password = '1223334444',
+                       db = 'cafewhere_recommend',
+                       charset = 'utf8')
 
     def disconnect(self):
         self.conn.close()
